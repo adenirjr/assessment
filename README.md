@@ -27,3 +27,4 @@ Then run the following command:
 3. For real world application it would be better to have the file path via command line arguments.
 4. Also, to be production ready, there has to be more validation over the input provided. 
 5. I have used Float instead of BigDecimal for low memory footprint.
+6. For production ready, the input file has to be read as streaming to no cause out of memory in the heap.
