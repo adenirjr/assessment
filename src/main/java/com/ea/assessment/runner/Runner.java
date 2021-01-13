@@ -72,7 +72,7 @@ public class Runner implements CommandLineRunner {
         Collections.sort(summaryVOList, new Comparator<SummaryVO>() {
             @Override
             public int compare(SummaryVO o1, SummaryVO o2) {
-                return o1.getAverage().compareTo(o2.getAverage());
+                return o2.getAverage().compareTo(o1.getAverage());
             }
         });
     }
@@ -84,9 +84,6 @@ public class Runner implements CommandLineRunner {
      * @throws Exception
      */
     private List<String> readInputFile() throws Exception {
-        System.out.println(Paths.get(fileName)
-                .toAbsolutePath());
-
         return Files.readAllLines(Paths.get(fileName)
                 .toAbsolutePath());
     }
