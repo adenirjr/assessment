@@ -36,7 +36,6 @@ public class Runner implements CommandLineRunner {
         final List<String> fileContent = readInputFile();
         final List<SummaryVO> summaryVOList = getSortedByAvgSummaryList(fileContent);
 
-        sortSummaryList(summaryVOList);
         printOutputToConsole(summaryVOList);
 
         log.info("File Processing Finished");
@@ -59,6 +58,8 @@ public class Runner implements CommandLineRunner {
                                 .sortedFloatList(entry.getValue())
                                 .build())
                         .collect(Collectors.toList());
+
+        sortSummaryList(summaryVOList);
 
         return summaryVOList;
     }
